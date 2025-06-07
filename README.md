@@ -22,7 +22,8 @@ Este proyecto es una aplicación de consola desarrollada en Python que permite a
   En la carpeta del proyecto, ejecuta:
 
   ```bash
-  python app.py
+  python algorithms/app.py
+
   ```
 
 ---
