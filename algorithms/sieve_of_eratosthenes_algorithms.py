@@ -31,20 +31,21 @@ def measure_time(func, arg):
     execution_time = end_time - start_time
     return print(f"Resultado: {result}, Tiempo de ejecución: {execution_time:.6f} segundos")
 
-# Casos para números no primos (4 casos, de menor a mayor)
-measure_time(sieve_of_eratosthenes, 10)      # No primo pequeño
-measure_time(sieve_of_eratosthenes, 200)     # No primo mediano
-measure_time(sieve_of_eratosthenes, 4000)    # No primo grande
-measure_time(sieve_of_eratosthenes, 200000)  # No primo muy grande
+def sieve_automatic_tests():
+    # Casos para números no primos (4 casos, de menor a mayor)
+    measure_time(sieve_of_eratosthenes, 10)
+    measure_time(sieve_of_eratosthenes, 200)
+    measure_time(sieve_of_eratosthenes, 4000)
+    measure_time(sieve_of_eratosthenes, 200000)
 
-# Casos para números primos (10 casos, de menor a mayor)
-measure_time(sieve_of_eratosthenes, 3)         # Primo pequeño
-measure_time(sieve_of_eratosthenes, 7)         # Primo pequeño
-measure_time(sieve_of_eratosthenes, 29)        # Primo pequeño
-measure_time(sieve_of_eratosthenes, 101)       # Primo mediano
-measure_time(sieve_of_eratosthenes, 307)       # Primo mediano
-measure_time(sieve_of_eratosthenes, 1009)      # Primo grande
-measure_time(sieve_of_eratosthenes, 5003)      # Primo grande
-measure_time(sieve_of_eratosthenes, 104729)    # Primo muy grande
-measure_time(sieve_of_eratosthenes, 1299709)   # Primo aún más grande
-measure_time(sieve_of_eratosthenes, 15485863)  # Primo enorme
+    # Casos para números primos (10 casos, de menor a mayor)
+    measure_time(sieve_of_eratosthenes, 104729)
+    measure_time(sieve_of_eratosthenes, 1299709)
+    measure_time(sieve_of_eratosthenes, 15485863)
+    measure_time(sieve_of_eratosthenes, 32452843)
+    measure_time(sieve_of_eratosthenes, 49979687)
+    measure_time(sieve_of_eratosthenes, 67867967)
+    measure_time(sieve_of_eratosthenes, 86028121)
+    measure_time(sieve_of_eratosthenes, 104395303)
+    measure_time(sieve_of_eratosthenes, 122949829)
+    measure_time(sieve_of_eratosthenes, 141650939)

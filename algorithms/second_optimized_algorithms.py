@@ -4,7 +4,7 @@
 from time import time
 from math import isqrt
 
-def is_prime(n):
+def optimized_is_prime(n):
   if n <= 1:
     return 'No es primo'
   if n == 2:
@@ -20,26 +20,27 @@ def is_prime(n):
   return 'Es primo'
 
 def measure_time(func, arg):
-    start_time = time()
-    result = func(arg)
-    end_time = time()
-    execution_time = end_time - start_time
-    return print(f"Resultado: {result}, Tiempo de ejecución: {execution_time:.6f} segundos")
+  start_time = time()
+  result = func(arg)
+  end_time = time()
+  execution_time = end_time - start_time
+  return print(f"Resultado: {result}, Tiempo de ejecución: {execution_time:.6f} segundos")
 
-# Casos para números no primos (4 casos, de menor a mayor)
-measure_time(is_prime, 10)      # No primo pequeño
-measure_time(is_prime, 200)     # No primo mediano
-measure_time(is_prime, 4000)    # No primo grande
-measure_time(is_prime, 200000)  # No primo muy grande
+def optimized_automatic_tests():
+  # Casos para números no primos (4 casos, de menor a mayor)
+  measure_time(optimized_is_prime, 10)
+  measure_time(optimized_is_prime, 200)
+  measure_time(optimized_is_prime, 4000)
+  measure_time(optimized_is_prime, 200000)
 
-# Casos para números primos (10 casos, de menor a mayor)
-measure_time(is_prime, 3)         # Primo pequeño
-measure_time(is_prime, 7)         # Primo pequeño
-measure_time(is_prime, 29)        # Primo pequeño
-measure_time(is_prime, 101)       # Primo mediano
-measure_time(is_prime, 307)       # Primo mediano
-measure_time(is_prime, 1009)      # Primo grande
-measure_time(is_prime, 5003)      # Primo grande
-measure_time(is_prime, 104729)    # Primo muy grande
-measure_time(is_prime, 1299709)   # Primo aún más grande
-measure_time(is_prime, 15485863)  # Primo enorme
+  # Casos para números primos (10 casos, de menor a mayor)
+  measure_time(optimized_is_prime, 104729)
+  measure_time(optimized_is_prime, 1299709)
+  measure_time(optimized_is_prime, 15485863)
+  measure_time(optimized_is_prime, 32452843)
+  measure_time(optimized_is_prime, 49979687)
+  measure_time(optimized_is_prime, 67867967)
+  measure_time(optimized_is_prime, 86028121)
+  measure_time(optimized_is_prime, 104395303)
+  measure_time(optimized_is_prime, 122949829)
+  measure_time(optimized_is_prime, 141650939)
