@@ -1,6 +1,3 @@
-# Este es el algoritmo más básico para calcular si un número es primo o no.
-# Vamos a definirlo en una función que recibe un número entero y devuelve True si es primo y False si no lo es.
-# Luego vamos a construir una función que mida el tiempo que tarda en ejecutarse
 from time import time
 
 def is_prime(n):
@@ -16,24 +13,38 @@ def measure_time(func, arg):
     result = func(arg)
     end_time = time()
     execution_time = end_time - start_time
-    return print(f"Resultado: {result}, Tiempo de ejecución: {execution_time:.6f} segundos")
+    return arg, execution_time # Devuelve lo mismo sin el print. 
+    #return print(f"{arg} \t {execution_time:.3f}")
 
-def basic_automatic_tests():
-  # Casos para números no primos (4 casos, de menor a mayor)
-  measure_time(is_prime, 10)
-  measure_time(is_prime, 200)
-  measure_time(is_prime, 4000)
-  measure_time(is_prime, 200000)
+def cambio_coma(arg, execution_time):
+        tiempo_formateado= f"{execution_time:.3f}".replace(".",",")    
+        return f"{arg}\t{tiempo_formateado}"
 
-  # Casos para números primos (10 casos, de menor a mayor)
-  measure_time(is_prime, 104729)
-  measure_time(is_prime, 1299709)
-  measure_time(is_prime, 15485863)
-  measure_time(is_prime, 32452843)
-  measure_time(is_prime, 49979687)
-  measure_time(is_prime, 67867967)
-  measure_time(is_prime, 86028121)
-  measure_time(is_prime, 104395303)
-  measure_time(is_prime, 122949829)
-  measure_time(is_prime, 141650939)
+primos_grandes = [
+    104729,
+    1299709,
+    15485863,
+    32452843,
+    49979687,
+    67867967,
+    86028121,
+    104395303,
+    122949829,
+    141650939
+]
 
+for i in primos_grandes:
+    arg, tiempo = measure_time(is_prime, i)
+    resultado = cambio_coma(arg, tiempo)
+    print(resultado)
+
+# measure_time(is_prime, 104729)      # Primo muy grande
+# measure_time(is_prime, 1299709)     # Primo aún más grande
+# measure_time(is_prime, 15485863)    # Primo enorme
+# measure_time(is_prime, 32452843)    # Primo aún más enorme
+# measure_time(is_prime, 49979687)    # Primo gigante
+# measure_time(is_prime, 67867967)    # Primo colosal
+# measure_time(is_prime, 86028121)    # Primo titánico
+# measure_time(is_prime, 104395303)   # Primo monstruoso
+# measure_time(is_prime, 122949829)   # Primo gigantesco
+# measure_time(is_prime, 141650939)   # Primo descomunal
