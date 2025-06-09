@@ -27,6 +27,8 @@ Este proyecto es una aplicación de consola desarrollada en Python que permite a
   ```
 
 ---
+## Link al video de youtube
+ [Link](https://www.youtube.com/watch?v=3fPl2pzjfHM)
 
 ## Conclusiones
 
